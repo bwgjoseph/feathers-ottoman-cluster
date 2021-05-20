@@ -2,9 +2,9 @@ import { Ottoman, SearchConsistency } from 'ottoman';
 import { Application } from './declarations';
 import logger from './logger';
 
-const initOttoman = async (searchConsistency: SearchConsistency = SearchConsistency.GLOBAL): Promise<Ottoman> => {
+const initOttoman = async (consistency: SearchConsistency = SearchConsistency.GLOBAL): Promise<Ottoman> => {
   const ottoman = new Ottoman({
-    searchConsistency,
+    consistency,
   });
 
   ottoman.connect({

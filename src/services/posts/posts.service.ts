@@ -1,5 +1,6 @@
 // Initializes the `posts` service on path `/posts`
 import { ServiceAddons } from '@feathersjs/feathers';
+import { OttomanServiceOptions } from 'feathers-ottoman-trial';
 import { SearchConsistency } from 'ottoman';
 import { Application } from '../../declarations';
 import createModel from '../../models/posts.model';
@@ -14,12 +15,12 @@ declare module '../../declarations' {
 }
 
 export default function (app: Application): void {
-  const options = {
+  const options: OttomanServiceOptions = {
     Model: createModel(app),
     paginate: app.get('paginate'),
     ottoman: {
       lean: true,
-      SearchConsistency: SearchConsistency.LOCAL,
+      consistency: SearchConsistency.LOCAL,
     }
   };
 
