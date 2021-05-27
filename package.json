@@ -49,7 +49,7 @@
     "cors": "^2.8.5",
     "feathers-memory": "^4.1.0",
     "helmet": "^4.6.0",
-    "ottoman": "2.0.0-alpha.29",
+    "ottoman": "2.0.0-beta.1",
     "serve-favicon": "^2.5.0",
     "winston": "^3.3.3"
   },
@@ -58,14 +58,14 @@
     "@types/cors": "^2.8.10",
     "@types/mocha": "^8.2.2",
     "@types/serve-favicon": "^2.5.2",
-    "@typescript-eslint/eslint-plugin": "^4.24.0",
-    "@typescript-eslint/parser": "^4.24.0",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
     "axios": "^0.21.1",
-    "eslint": "^7.26.0",
+    "eslint": "^7.27.0",
     "mocha": "^8.4.0",
     "shx": "^0.3.3",
     "ts-mocha": "^8.0.0",
     "ts-node-dev": "^1.1.6",
-    "typescript": "^4.2.4"
+    "typescript": "^4.3.2"
   }
 }
