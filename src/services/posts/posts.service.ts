@@ -1,16 +1,16 @@
 // Initializes the `posts` service on path `/posts`
-import { ServiceAddons } from '@feathersjs/feathers';
+import { Service } from '@feathersjs/feathers';
 import { OttomanServiceOptions } from 'feathers-ottoman-trial';
 import { SearchConsistency } from 'ottoman';
 import { Application } from '../../declarations';
 import createModel from '../../models/posts.model';
-import { Posts } from './posts.class';
+import { Post, Posts } from './posts.class';
 import hooks from './posts.hooks';
 
 // Add this service to the service type index
 declare module '../../declarations' {
   interface ServiceTypes {
-    'posts': Posts & ServiceAddons<any>;
+    'posts': Service<Post> & Posts;
   }
 }
 

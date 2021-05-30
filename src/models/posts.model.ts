@@ -2,11 +2,11 @@
 //
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
-import { getModel, model, Schema } from 'ottoman';
+import { getModel, model, ModelTypes, Schema } from 'ottoman';
 import { ModelOptions } from 'ottoman/lib/types/model/interfaces/create-model.interface';
 import { Application } from '../declarations';
 
-export default function (app: Application) {
+export default function (app: Application): ModelTypes {
   const modelName = 'posts';
   const modelOptions: ModelOptions = {
     scopeName: 'demopostscope',
@@ -18,5 +18,4 @@ export default function (app: Application) {
   });
 
   return getModel(modelName) || model(modelName, schema, modelOptions);
-
 }
