@@ -1,6 +1,6 @@
 // Initializes the `posts` service on path `/posts`
 import { Service } from '@feathersjs/feathers';
-import { OttomanServiceOptions } from 'feathers-ottoman-trial';
+import { OttomanServiceOptions } from 'feathers-ottoman';
 import { SearchConsistency } from 'ottoman';
 import { Application } from '../../declarations';
 import createModel from '../../models/posts.model';

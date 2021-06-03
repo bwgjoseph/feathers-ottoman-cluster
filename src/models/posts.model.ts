@@ -9,8 +9,8 @@ import { Application } from '../declarations';
 export default function (app: Application): ModelTypes {
   const modelName = 'posts';
   const modelOptions: ModelOptions = {
-    scopeName: 'demopostscope',
-    collectionName: 'demopostcollection',
+    scopeName: 'postscope',
+    collectionName: 'postcollection',
   };
 
   const schema = new Schema({

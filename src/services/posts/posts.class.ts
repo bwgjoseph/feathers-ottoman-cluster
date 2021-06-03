@@ -1,4 +1,4 @@
-import { Service, OttomanServiceOptions } from 'feathers-ottoman-trial';
+import { Service, OttomanServiceOptions } from 'feathers-ottoman';
 import { Application } from '../../declarations';
 
 export interface Post {

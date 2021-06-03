@@ -1,17 +1,35 @@
 # feathers-ottoman-demo
 
-## Setup
+This project is used for testing feathers service against `feathers-ottoman` database adapter
 
-1. Clone [feathers-ottoman-trial](https://github.com/bwgjoseph/feathers-ottoman-trial) to your local directory
-2. Navigate to the root directory of `feathers-ottoman-trial`
-3. Run `npm link`
-4. Navigate back to root directory of `feathers-ottoman-demo`
-5. Run `npm link feathers-ottoman-trial`
+## Prerequisite
+
+1. Navigate to `/docker-compose`
+2. Run `docker-compose up -d`
+3. Wait 5-10 sec for all services to fully initialized
+3. Launch a command prompt and run `docker exec -it couchbase bash`
+4. Once inside the container, run `cd scripts` then `./setup-couchbase.sh`, type `y` if prompted. See details below
+5. You can now access couchbase via `localhost:8091` and login using `admin:password`
+
+### setup-couchbase.sh
+
+This script will initialize and setup couchbase node and cluster using the couchbase-cli, hence, no manual setup is required. It will:
+
+1. Initialize the node with `admin:password` credentials
+2. Initialize the cluster with only `data, index, query, fts` services enabled
+3. Create `user:password` with `full admin` rights
+4. Creates a bucket: `testBucket`
+5. Creates a scope: `testScope` under `testBucket`
+6. Creates a collection: `testCollection` under `testScope`
 
 ## Run
 
-1. Run `npm run dev` to start the server
+1. Run `npm run dev` to start the feathers server
 
-## Demo
+## Local Development Setup
 
-This project is used for testing out `feathers-ottoman` database adapter which is currently developed under `feathers-ottoman-trial`
+1. Clone [feathers-ottoman](https://github.com/bwgjoseph/feathers-ottoman) to your local directory
+2. Navigate to the root directory of `feathers-ottoman`
+3. Run `npm link`
+4. Navigate back to root directory of `feathers-ottoman-demo`
+5. Run `npm link feathers-ottoman`
