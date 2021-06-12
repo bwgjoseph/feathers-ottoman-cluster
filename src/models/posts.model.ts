@@ -14,7 +14,26 @@ export default function (app: Application): ModelTypes {
   };
 
   const schema = new Schema({
-    text: { type: String, required: true }
+    title: {
+      type: String,
+      required: true,
+    },
+    createdBy: {
+      type: String,
+      required: true,
+    },
+    createdAt: {
+      type: Date,
+      required: true,
+    },
+    updatedBy: {
+      type: String,
+      required: true,
+    },
+    updatedAt: {
+      type: Date,
+      required: true,
+    }
   });
 
   return getModel(modelName) || model(modelName, schema, modelOptions);

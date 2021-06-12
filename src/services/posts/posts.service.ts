@@ -4,8 +4,9 @@ import { OttomanServiceOptions } from 'feathers-ottoman';
 import { SearchConsistency } from 'ottoman';
 import { Application } from '../../declarations';
 import createModel from '../../models/posts.model';
-import { Post, Posts } from './posts.class';
+import Posts from './posts.class';
 import hooks from './posts.hooks';
+import Post from './posts.interface';
 
 // Add this service to the service type index
 declare module '../../declarations' {
