@@ -7,9 +7,9 @@ This project is used for testing feathers service against `feathers-ottoman` dat
 1. Navigate to `/docker-compose`
 2. Run `docker-compose up -d`
 3. Wait 5-10 sec for all services to fully initialized
-3. Launch a command prompt and run `docker exec -it couchbase bash`
-4. Once inside the container, run `cd scripts` then `./setup-couchbase.sh`, type `y` if prompted. See details below
-5. You can now access couchbase via `localhost:8091` and login using `admin:password`
+4. Launch a command prompt and run `docker exec -it couchbase bash`
+5. Once inside the container, run `cd scripts` then `./setup-couchbase.sh`, type `y` if prompted. See details below
+6. You can now access couchbase via `localhost:8091` and login using `admin:password`
 
 ### setup-couchbase.sh
 
@@ -33,3 +33,7 @@ This script will initialize and setup couchbase node and cluster using the couch
 3. Run `npm link`
 4. Navigate back to root directory of `feathers-ottoman-demo`
 5. Run `npm link feathers-ottoman`
+
+## Showcase
+
+1. [Extend Schema](https://ottomanjs.com/guides/schema.html#extend-schemas) - See `base.schema.ts`

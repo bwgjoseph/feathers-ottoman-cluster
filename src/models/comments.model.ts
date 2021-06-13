@@ -5,6 +5,7 @@
 import { getModel, model, ModelTypes, Schema } from 'ottoman';
 import { ModelOptions } from 'ottoman/lib/types/model/interfaces/create-model.interface';
 import { Application } from '../declarations';
+import baseSchema from './base.schema';
 
 export default function (app: Application): ModelTypes {
   const modelName = 'comments';
@@ -22,23 +23,7 @@ export default function (app: Application): ModelTypes {
       type: String,
       ref: 'posts',
     },
-    createdBy: {
-      type: String,
-      required: true,
-    },
-    createdAt: {
-      type: Date,
-      required: true,
-    },
-    updatedBy: {
-      type: String,
-      required: true,
-    },
-    updatedAt: {
-      type: Date,
-      required: true,
-    }
-  });
+  }).add(baseSchema);
 
   return getModel(modelName) || model(modelName, schema, modelOptions);
 }
