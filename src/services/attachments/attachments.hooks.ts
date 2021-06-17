@@ -1,4 +1,4 @@
-import createAttachment from './createAttachment';
+import createAttachment from './hooks/createAttachment';
 
 export default {
   before: {

@@ -4,7 +4,7 @@ import { Application } from '../../declarations';
 import { Attachments } from './attachments.class';
 import hooks from './attachments.hooks';
 import multer from 'multer';
-import transferAttachmentsToFeathers from './transferFilesToFeathers';
+import transferAttachmentsToFeathers from './hooks/transferFilesToFeathers';
 import Attachment from './attachments.interface';
 import { SearchConsistency } from 'ottoman';
 import createModel from '../../models/attachments.model';

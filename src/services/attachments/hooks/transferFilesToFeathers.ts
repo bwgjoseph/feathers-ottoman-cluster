@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express-serve-static-core';
-import logger from '../../logger';
+import logger from '../../../logger';
 
 /**
  * Transform multer processed files to feathers object which can be accessed
