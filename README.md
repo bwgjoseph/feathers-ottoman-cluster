@@ -37,3 +37,6 @@ This script will initialize and setup couchbase node and cluster using the couch
 ## Showcase
 
 1. [Extend Schema](https://ottomanjs.com/guides/schema.html#extend-schemas) - See `base.schema.ts`
+2. Upload attachment via `attachments` service - See `/public/index.html`
+   1. Navigate to `localhost:3030`, select your file (image) to upload, and the image on screen will change upon uploaded
+   2. This works by converting the uploaded file into `base64` string and store into the database
