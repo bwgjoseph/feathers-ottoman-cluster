@@ -14,11 +14,27 @@ export default function (app: Application): ModelTypes {
     collectionName: 'postcollection',
   };
 
+  const context = new Schema({
+    ids: {
+      type: [String],
+      required: true,
+    },
+    owner: {
+      type: String,
+      required: true,
+    },
+    type: {
+      type: String,
+      required: true,
+    }
+  });
+
   const schema = new Schema({
     title: {
       type: String,
       required: true,
-    }
+    },
+    contexts: [context],
   }).add(baseSchema);
 
   return getModel(modelName) || model(modelName, schema, modelOptions);

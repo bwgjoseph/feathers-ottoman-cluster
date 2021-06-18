@@ -12,7 +12,7 @@ const workspace = {
   updatedAt: new Date(),
 };
 
-describe.only('\'workspaces\' service', () => {
+describe('\'workspaces\' service', () => {
   const service = app.service('workspaces');
 
   beforeEach(async () => {

@@ -5,6 +5,13 @@ import Post from '../../src/services/posts/posts.interface';
 
 const post = {
   title: 'post',
+  contexts: [
+    {
+      ids: ['a', 'b'],
+      owner: 'a',
+      type: 'workspace'
+    }
+  ],
   createdBy: 'joseph',
   createdAt: new Date(),
   updatedBy: 'joseph',
