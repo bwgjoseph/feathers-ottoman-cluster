@@ -40,3 +40,18 @@ This script will initialize and setup couchbase node and cluster using the couch
 2. Upload attachment via `attachments` service - See `/public/index.html`
    1. Navigate to `localhost:3030`, select your file (image) to upload, and the image on screen will change upon uploaded
    2. This works by converting the uploaded file into `base64` string and store into the database
+
+## Application
+
+This application showcase how to implement and integrate features within `feathers` and `3rd party libraries` such as `CASL`, `feathers-swagger`, `ottoman` and so on
+
+### Services
+
+This application has the following services
+
+1. User
+2. Workspace
+3. Post
+4. Comment
+5. Attachment
+

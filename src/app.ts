@@ -3,13 +3,10 @@ import favicon from 'serve-favicon';
 import compress from 'compression';
 import helmet from 'helmet';
 import cors from 'cors';
-
 import feathers from '@feathersjs/feathers';
 import configuration from '@feathersjs/configuration';
 import express from '@feathersjs/express';
 import socketio from '@feathersjs/socketio';
-
-
 import { Application } from './declarations';
 import logger from './logger';
 import middleware from './middleware';
@@ -18,6 +15,7 @@ import appHooks from './app.hooks';
 import channels from './channels';
 import { HookContext as FeathersHookContext } from '@feathersjs/feathers';
 import ottoman from './ottoman';
+import authentication from './services/authentication/authentication';
 // Don't remove this comment. It's needed to format import lines nicely.
 
 const app: Application = express(feathers());
@@ -42,6 +40,7 @@ app.configure(express.rest());
 app.configure(socketio());
 
 app.configure(ottoman);
+app.configure(authentication);
 // Configure other middleware (see `middleware/index.ts`)
 app.configure(middleware);
 // Set up our services (see `services/index.ts`)
