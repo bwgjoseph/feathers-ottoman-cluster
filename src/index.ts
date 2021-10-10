@@ -15,7 +15,7 @@ start().then(() => {
   );
 
   logger.info('ottomanClient', app.get('ottomanClient').config);
-}).catch((err) => {
+}).catch((err: any) => {
   logger.error('start error', err);
   logger.error('ottomanClient error', app.get('ottomanClient').config);
 });
