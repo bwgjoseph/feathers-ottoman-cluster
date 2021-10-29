@@ -2,8 +2,7 @@
 //
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
-import { getModel, model, ModelTypes, Schema } from 'ottoman';
-import { ModelOptions } from 'ottoman/lib/types/model/interfaces/create-model.interface';
+import { getModel, model, ModelTypes, Schema, ModelOptions } from 'ottoman';
 import { Application } from '../declarations';
 import baseSchema from './base.schema';
 

@@ -1,13 +1,12 @@
-import { Ottoman, SearchConsistency } from 'ottoman';
+import { set, Ottoman, SearchConsistency } from 'ottoman';
 import { Application } from './declarations';
 import logger from './logger';
 
 const initOttoman = async (consistency: SearchConsistency = SearchConsistency.GLOBAL): Promise<Ottoman> => {
-  const ottoman = new Ottoman({
-    consistency,
-  });
+  set('debug', true);
+  const ottoman = new Ottoman({ consistency });
 
-  ottoman.connect({
+  await ottoman.connect({
     connectionString: 'couchbase://localhost',
     bucketName: 'testBucket',
     username: 'user',
@@ -25,4 +24,3 @@ export default function (app: Application): void {
     })
     .catch((err) => logger.error('init error', err));
 }
-

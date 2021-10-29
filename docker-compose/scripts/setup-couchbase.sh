@@ -11,10 +11,14 @@
 # ERROR 100 : N1QL: No N1QL service found on this cluster
 # Path to history file for the shell : /root/.cbq_history
 # ERROR 107 : Not connected to any cluster. Use \CONNECT command
-/opt/couchbase/bin/cbq -e localhost:8091 --user admin --password password -script="CREATE PRIMARY INDEX ON \`testBucket\`";
+# /opt/couchbase/bin/cbq -e localhost:8091 --user admin --password password -script="CREATE PRIMARY INDEX ON \`testBucket\`";
 
-/opt/couchbase/bin/cbq -e localhost:8091 --user admin --password password -script="CREATE PRIMARY INDEX ON \`testBucket\`.`postscope`.`postcollection`";
+# /opt/couchbase/bin/cbq -e localhost:8091 --user admin --password password -script="CREATE PRIMARY INDEX ON \`testBucket\`.`postscope`.`postcollection`";
 
 # /opt/couchbase/bin/couchbase-cli collection-manage --cluster http://localhost:8091 --username admin --password password --bucket testBucket --create-scope testScope
 
 # /opt/couchbase/bin/couchbase-cli collection-manage --cluster http://localhost:8091 --username admin --password password --bucket testBucket --create-collection testScope.testCollection
+
+# It is not required to create primary indexes for Couchbase
+# https://forums.couchbase.com/t/json-data-modeling/30759
+# https://blog.couchbase.com/primary-uses-for-couchbase-primary-index/
