@@ -1,10 +1,14 @@
-import { set, Ottoman, SearchConsistency } from 'ottoman';
+import { set, Ottoman, SearchConsistency, getDefaultInstance } from 'ottoman';
 import { Application } from './declarations';
 import logger from './logger';
 
 const initOttoman = async (consistency: SearchConsistency = SearchConsistency.GLOBAL): Promise<Ottoman> => {
-  set('debug', true);
-  const ottoman = new Ottoman({ consistency });
+  set('DEBUG', true);
+  let ottoman = getDefaultInstance();
+
+  if (!ottoman) {
+    ottoman = new Ottoman({ collectionName: '_default', consistency });
+  }
 
   await ottoman.connect({
     connectionString: 'couchbase://localhost',
