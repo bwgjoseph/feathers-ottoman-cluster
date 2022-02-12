@@ -6,35 +6,37 @@ import { getModel, model, ModelTypes, Schema, ModelOptions } from 'ottoman';
 import { Application } from '../declarations';
 import baseSchema from './base.schema';
 
+const modelName = 'posts';
+const modelOptions: ModelOptions = {
+  scopeName: 'postscope',
+  collectionName: 'postcollection',
+};
+
+const context = new Schema({
+  ids: {
+    type: [String],
+    required: true,
+  },
+  owner: {
+    type: String,
+    required: true,
+  },
+  type: {
+    type: String,
+    required: true,
+  }
+});
+
+const schema = new Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  contexts: [context],
+}).add(baseSchema);
+
+const postModel = model(modelName, schema, modelOptions);
+
 export default function (app: Application): ModelTypes {
-  const modelName = 'posts';
-  const modelOptions: ModelOptions = {
-    scopeName: 'postscope',
-    collectionName: 'postcollection',
-  };
-
-  const context = new Schema({
-    ids: {
-      type: [String],
-      required: true,
-    },
-    owner: {
-      type: String,
-      required: true,
-    },
-    type: {
-      type: String,
-      required: true,
-    }
-  });
-
-  const schema = new Schema({
-    title: {
-      type: String,
-      required: true,
-    },
-    contexts: [context],
-  }).add(baseSchema);
-
-  return getModel(modelName) || model(modelName, schema, modelOptions);
+  return getModel(modelName) || postModel;
 }

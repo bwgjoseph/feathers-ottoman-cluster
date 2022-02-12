@@ -6,22 +6,24 @@ import { getModel, model, ModelTypes, Schema, ModelOptions } from 'ottoman';
 import { Application } from '../declarations';
 import baseSchema from './base.schema';
 
+const modelName = 'users';
+const modelOptions: ModelOptions = {
+  scopeName: 'userscope',
+  collectionName: 'usercollection',
+};
+
+const schema = new Schema({
+  password: {
+    type: String,
+    required: true,
+  },
+  roles: {
+    type: [String]
+  }
+}).add(baseSchema);
+
+const userModel = model(modelName, schema, modelOptions);
+
 export default function (app: Application): ModelTypes {
-  const modelName = 'users';
-  const modelOptions: ModelOptions = {
-    scopeName: 'userscope',
-    collectionName: 'usercollection',
-  };
-
-  const schema = new Schema({
-    password: {
-      type: String,
-      required: true,
-    },
-    roles: {
-      type: [String]
-    }
-  }).add(baseSchema);
-
-  return getModel(modelName) || model(modelName, schema, modelOptions);
+  return getModel(modelName) || userModel;
 }

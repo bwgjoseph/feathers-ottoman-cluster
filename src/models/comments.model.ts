@@ -6,23 +6,25 @@ import { getModel, model, ModelTypes, Schema, ModelOptions } from 'ottoman';
 import { Application } from '../declarations';
 import baseSchema from './base.schema';
 
+const modelName = 'comments';
+const modelOptions: ModelOptions = {
+  scopeName: 'commentscope',
+  collectionName: 'commentcollection',
+};
+
+const schema = new Schema({
+  review: {
+    type: String,
+    required: true,
+  },
+  post: {
+    type: String,
+    ref: 'posts',
+  },
+}).add(baseSchema);
+
+const commentModel = model(modelName, schema, modelOptions);
+
 export default function (app: Application): ModelTypes {
-  const modelName = 'comments';
-  const modelOptions: ModelOptions = {
-    scopeName: 'commentscope',
-    collectionName: 'commentcollection',
-  };
-
-  const schema = new Schema({
-    review: {
-      type: String,
-      required: true,
-    },
-    post: {
-      type: String,
-      ref: 'posts',
-    },
-  }).add(baseSchema);
-
-  return getModel(modelName) || model(modelName, schema, modelOptions);
+  return getModel(modelName) || commentModel;
 }
