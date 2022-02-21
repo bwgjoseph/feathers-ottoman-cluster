@@ -7,6 +7,8 @@ import { Application } from './declarations';
  *
  * See https://github.com/couchbaselabs/node-ottoman/issues/629 on why we only connect and start
  * ottoman at index.ts
+ *
+ * Also note that during the test, we need to explicitly connect and disconnect from ottoman
  */
 set('DEBUG', true);
 export const ottoman = new Ottoman({ collectionName: '_default', consistency: SearchConsistency.GLOBAL });
